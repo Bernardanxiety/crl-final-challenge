@@ -64,15 +64,21 @@ a {
 
 /* helper classes */
 .flow-content > * + * {
-    margin: var(--gap, 1em) 0 0 0;
+    margin-top: var(--top);
+    margin-right: var(--right); 
+    margin-bottom: var(--bot);
+    margin-left: var(--left);
 }
 
 .row {
-    display: flex;
+    
 }
 
 .gap-content > * + * {
-    margin: var(--inner-gap) 0 0 0;
+    margin-top: var(--top--);
+    margin-right: var(--right--); 
+    margin-bottom: var(--bot--);
+    margin-left: var(--left--);
 }
 
 .container {
@@ -107,7 +113,7 @@ a {
 
 .nav__list {
     text-align: center;
-    --gap: .5em;
+    --top: .75em;
 }
 
 .nav__item {
@@ -129,9 +135,7 @@ a {
 
 
 
-.nav--bar .row {
-    justify-content: space-between;
-}
+
 
 .nav__item {
     font-size: 1.125rem;
@@ -143,7 +147,8 @@ header {
     --h-size: 3.625rem;
     --clr-p: var(--clr-4);
     --h-height: 1;
-    --gap: 3em;
+    --top: 3em;
+    --top--: 1em;
 
     padding: 3rem 1rem;
     background: var(--clr-2);
@@ -156,7 +161,8 @@ header {
 /* cards */
 .cards {
     --clr-p: var(--clr-2);
-    --gap: 3em;
+    --top: 3em;
+    --top--: 1em;
 
     padding: 4em 0;
     background: hsl(40, 20%, 96%);
@@ -165,6 +171,8 @@ header {
 /* main */
 main {
     padding: 4em 0;
+    --top: 2em;
+    --top--: 1em;
 }
 
 article {
@@ -172,7 +180,7 @@ article {
 }
 
 .card--dark {
-    --inner-gap: 1em;
+    --top--: 1em;
 
     padding: 1em;
     background: var(--clr-2);
@@ -181,8 +189,8 @@ article {
 
 /* footer */
 .footer {
-    --gap: 3em;
-    --inner-gap: 1em;
+    --top: 3em;
+    --top--: 1em;
     padding: 4em 0;
     background: var(--clr-2);
 }
@@ -195,8 +203,75 @@ article {
     --h-size: 1.6rem;
 }
 
+.nav__link:focus,
+.nav__link:hover,
 .footer--link:focus,
 .footer--link:hover {
     outline: 1px solid white;
-    outline-offset: .5em;
+    outline-offset: 3px;
+}
+
+
+
+@media (min-width: 700px) {
+    .container {
+        width: min(75%, 1200px);
+    }
+
+    .hamburger {
+        display: none;
+    }
+ 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .footer .row > * {
+        flex-basis: 47%;
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: flex-end;
+        --top: 0;
+        --left: 10px;
+    }
+
+    .nav--primary {
+        justify-self: flex-end;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .row {
+        display: flex;
+        flex-wrap:initial;
+    }
+
+    .container {
+        width: min(90%, 1200px);
+    }
+
+    .header__content {
+        align-self: flex-end;
+    }
+
+    .cards {
+        --top: 0;
+    }
+
+    /* article {
+        width: 64%;
+    }
+
+    aside {
+        width: 35%;
+    } */
+
+    .footer .row {
+        flex-basis: 100%;
+    }
 }
