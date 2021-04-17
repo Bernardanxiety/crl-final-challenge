@@ -43,12 +43,16 @@ a {
     color: var(--clr-gold);
 }
 
+.text-center {
+    text-align: center;
+}
+
 .monserrat {
     font-family: 'Monserrat', sans-serif;
 }
 
 .heading {
-    font-size: var(--h-size, inherit);
+    font-size: var(--h-size, 1.5rem);
     line-height: var(--h-height);
 }
 
@@ -60,7 +64,7 @@ a {
 
 /* helper classes */
 .flow-content > * + * {
-    margin: var(--gap) 0 0 0;
+    margin: var(--gap, 1em) 0 0 0;
 }
 
 .row {
@@ -116,7 +120,7 @@ a {
 
 .hamburger {
     position: absolute;
-    top: 0;
+    top: calc(height * .5);
     right: 0px;
 }
 
@@ -147,4 +151,52 @@ header {
 
 .header__content {
     --inner-gap: 1em;
+}
+
+/* cards */
+.cards {
+    --clr-p: var(--clr-2);
+    --gap: 3em;
+
+    padding: 4em 0;
+    background: hsl(40, 20%, 96%);
+}
+
+/* main */
+main {
+    padding: 4em 0;
+}
+
+article {
+    --clr-p: var(--clr-2);
+}
+
+.card--dark {
+    --inner-gap: 1em;
+
+    padding: 1em;
+    background: var(--clr-2);
+    color: #fff;
+}
+
+/* footer */
+.footer {
+    --gap: 3em;
+    --inner-gap: 1em;
+    padding: 4em 0;
+    background: var(--clr-2);
+}
+
+.footer__heading {
+    --h-size: 2.5rem;
+}
+
+.footer__content {
+    --h-size: 1.6rem;
+}
+
+.footer--link:focus,
+.footer--link:hover {
+    outline: 1px solid white;
+    outline-offset: .5em;
 }
