@@ -1,0 +1,20 @@
+:root {
+
+}
+
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* general styling */
+
+/* helper classes */
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
