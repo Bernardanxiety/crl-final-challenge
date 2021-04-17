@@ -155,7 +155,7 @@ header {
 
 /* cards */
 .cards {
-    --clr-p: var(--clr-2);
+    --clr-p: red;
     --gap: 3em;
 
     padding: 4em 0;
