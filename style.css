@@ -130,7 +130,7 @@ a {
 .hamburger {
     position: absolute;
     top: calc(height * .5);
-    right: 0px;
+    right: 20px;
 }
 
 .logo {
