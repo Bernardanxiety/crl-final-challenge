@@ -94,6 +94,7 @@ a {
 
 .visible {
     display: none;
+    margin: 0 0 2em 0;
 }
 
 .position {
@@ -114,8 +115,12 @@ a {
     --top: .75em;
 }
 
-.nav__item {
+.nav__item + .nav__item {
+    margin: .5em 0 0 0;;
+}
 
+.nav__list--primary {
+    margin: 0 0 2em 0;
 }
 
 .nav__link {
@@ -245,6 +250,14 @@ article {
         justify-content: flex-end;
         --top: 0;
         --left: 10px;
+    }
+
+    .nav__item + .nav__item {
+        margin: 0 0 0 1em;;
+    }
+    
+    .nav--primary {
+        margin: 0 0 0 0;
     }
 
     .nav--primary {
